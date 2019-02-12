@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testPlans>
+    <testPlan path="C:\JMX\acknowledgeReceipt_1.jmx" timeToWait="10">
+        <outLog>C:\JMX\acknowledgeReceipt_1.log</outLog>
+    </testPlan>
+    <testPlan path="C:\JMX\acknowledgeReceipt_10.jmx">
+        <outLog>C:\JMX\acknowledgeReceipt_10.log</outLog>
+    </testPlan>
+    <testPlan path="C:\JMX\acknowledgeReceipt_20.jmx"/>
+</testPlans>
