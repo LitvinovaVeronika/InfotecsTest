@@ -49,9 +49,11 @@ public class App {
 
             JSONObject xmlToJsonObj = XML.toJSONObject(xml);
 
-            FileWriter writer = new FileWriter(jsonPath);
-            writer.write(xmlToJsonObj.toString());
-
+            try (FileWriter writer = new FileWriter(jsonPath)) {
+                writer.write(xmlToJsonObj.toString());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
