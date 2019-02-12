@@ -13,7 +13,7 @@ public class App {
 
         try (RandomAccessFile f = new RandomAccessFile("BigFile", "rw")) {
             f.setLength(size);
-        } catch (IOException e) {
+        } catch (Exception e) {
             try (FileWriter errorFile = new FileWriter("error.txt")) {
                 errorFile.write(e.getMessage());
             } catch (IOException e1) {
@@ -49,11 +49,9 @@ public class App {
 
             JSONObject xmlToJsonObj = XML.toJSONObject(xml);
 
-            try (FileWriter writer = new FileWriter(jsonPath)) {
-                writer.write(xmlToJsonObj.toString());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            FileWriter writer = new FileWriter(jsonPath);
+            writer.write(xmlToJsonObj.toString());
+
         } catch (IOException e) {
             e.printStackTrace();
         }
